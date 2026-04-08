@@ -12,7 +12,7 @@ export default function Planner() {
       setLoading(true);
       setPlan("");
 
-      const res = await fetch("http://127.0.0.1:5000/generate-plan", {
+      const res = await fetch("https://ai-backend.onrender.com/generate-plan", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,6 @@ export default function Planner() {
       } else {
         setPlan(data);
 
-        // Save progress
         localStorage.setItem("tasksDone", 1);
         localStorage.setItem("streak", 2);
       }
